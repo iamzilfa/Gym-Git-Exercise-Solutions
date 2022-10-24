@@ -147,3 +147,143 @@ To https://github.com/iamzilfa/Gym-Git-Exercise-Solutions.git
 
 
 ```
+
+### Exercise 2
+
+```bash
+
+- ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git status
+On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	home.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+- ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git add home.html
+
+- ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git stash list 
+
+- ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git stash 
+Saved working directory and index state WIP on main: f3356c7 README changes
+
+- ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git stash list 
+stash@{0}: WIP on main: f3356c7 README changes
+
+- ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git status
+On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	about.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+- ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git add about.html
+
+- ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git stash 
+Saved working directory and index state WIP on main: f3356c7 README changes
+
+- ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git stash list 
+stash@{0}: WIP on main: f3356c7 README changes
+stash@{1}: WIP on main: f3356c7 README changes
+
+- ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git add team.html
+
+- ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git stash 
+Saved working directory and index state WIP on main: f3356c7 README changes
+
+- ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git stash status
+fatal: unknown subcommand: status
+
+usage: git stash list [<options>]
+   or: git stash show [<options>] [<stash>]
+   or: git stash drop [-q|--quiet] [<stash>]
+   or: git stash ( pop | apply ) [--index] [-q|--quiet] [<stash>]
+   or: git stash branch <branchname> [<stash>]
+   or: git stash clear
+   or: git stash [push [-p|--patch] [-k|--[no-]keep-index] [-q|--quiet]
+          [-u|--include-untracked] [-a|--all] [-m|--message <message>]
+          [--] [<pathspec>...]]
+   or: git stash save [-p|--patch] [-k|--[no-]keep-index] [-q|--quiet]
+          [-u|--include-untracked] [-a|--all] [<message>]
+
+- ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git stash list 
+stash@{0}: WIP on main: f3356c7 README changes
+stash@{1}: WIP on main: f3356c7 README changes
+stash@{2}: WIP on main: f3356c7 README changes
+
+- ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git stash pop stash@{1}
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   about.html
+
+Dropped stash@{1} (564f43afbf9891686f1298a07e43bfe434efc309)
+
+- ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git stash list 
+stash@{0}: WIP on main: f3356c7 README changes
+stash@{1}: WIP on main: f3356c7 README changes
+
+- ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git stash pop stash@{1}
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   about.html
+	new file:   home.html
+
+Dropped stash@{1} (085a992ff93c323dfc8c187c5832a94de21000f5)
+
+- ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   about.html
+	new file:   home.html
+
+- ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git add .
+
+- ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   about.html
+	new file:   home.html
+
+- ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git commit -m "home and about pages"
+[main 1d92e60] home and about pages
+ 2 files changed, 24 insertions(+)
+ create mode 100644 about.html
+ create mode 100644 home.html
+
+- ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git push origin main 
+Username for 'https://github.com': iamzilfa
+Password for 'https://iamzilfa@github.com': 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 558 bytes | 558.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/iamzilfa/Gym-Git-Exercise-Solutions.git
+   f3356c7..1d92e60  main -> main
+
+- ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git stash list 
+stash@{0}: WIP on main: f3356c7 README changes
+
+- ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git stash pop 
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   team.html
+
+Dropped refs/stash@{0} (b5f4a12a350106cff0bf60b10a44e0dfad93daca)
+
+- ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git reset --hard 
+HEAD is now at 1d92e60 home and about pages
+
+- ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git stash list 
+
+- ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ 
+
+```
