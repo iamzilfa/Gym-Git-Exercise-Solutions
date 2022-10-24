@@ -287,3 +287,58 @@ HEAD is now at 1d92e60 home and about pages
 - ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ 
 
 ```
+
+
+## Bundle 2
+
+### Exercise 1
+
+```bash
+
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$  git checkout -b ft/bundle-2
+Switched to a new branch 'ft/bundle-2'
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git branch 
+  dev
+* ft/bundle-2
+  main
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git status
+On branch ft/bundle-2
+nothing to commit, working tree clean
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git status
+On branch ft/bundle-2
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	services.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git add services.html
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git status
+On branch ft/bundle-2
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   services.html
+
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git commit -m 'set up services page'
+[ft/bundle-2 ecbcd1f] set up services page
+ 1 file changed, 12 insertions(+)
+ create mode 100644 services.html
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git push origin ft/bundle-2 
+Username for 'https://github.com': iamzilfa
+Password for 'https://iamzilfa@github.com': 
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 484 bytes | 484.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'ft/bundle-2' on GitHub by visiting:
+remote:      https://github.com/iamzilfa/Gym-Git-Exercise-Solutions/pull/new/ft/bundle-2
+remote: 
+To https://github.com/iamzilfa/Gym-Git-Exercise-Solutions.git
+ * [new branch]      ft/bundle-2 -> ft/bundle-2
+
+
+
+```
