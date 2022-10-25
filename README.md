@@ -339,6 +339,158 @@ remote:
 To https://github.com/iamzilfa/Gym-Git-Exercise-Solutions.git
  * [new branch]      ft/bundle-2 -> ft/bundle-2
 
+```
+
+### Exercise 2
+
+```bash 
+- ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git checkout main
+Switched to branch 'main'
+
+- ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> main
+
+- ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git pull origin main
+From https://github.com/iamzilfa/Gym-Git-Exercise-Solutions
+ * branch            main       -> FETCH_HEAD
+Updating c96f10f..fd06359
+Fast-forward
+ services.html | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+ create mode 100644 services.html
+
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git checkout -b ft/service-redesign
+Switched to a new branch 'ft/service-redesign'
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git add .
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git commit -m 'service file modified'
+[ft/service-redesign f0fe9e6] service file modified
+ 1 file changed, 1 insertion(+)
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git push origin ft/service-redesign 
+Username for 'https://github.com': iamzilfa
+Password for 'https://iamzilfa@github.com': 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 326 bytes | 326.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote: 
+remote: Create a pull request for 'ft/service-redesign' on GitHub by visiting:
+remote:      https://github.com/iamzilfa/Gym-Git-Exercise-Solutions/pull/new/ft/service-redesign
+remote: 
+To https://github.com/iamzilfa/Gym-Git-Exercise-Solutions.git
+ * [new branch]      ft/service-redesign -> ft/service-redesign
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git checkout main 
+Switched to branch 'main'
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git branch
+  dev
+  ft/bundle-2
+  ft/service-redesign
+* main
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git add .
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git commit -m "changes made on service file on main branch"
+[main 8bd6e97] changes made on service file on main branch
+ 1 file changed, 1 insertion(+)
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git push origin main 
+Username for 'https://github.com': iamzilfa
+Password for 'https://iamzilfa@github.com': 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 336 bytes | 336.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/iamzilfa/Gym-Git-Exercise-Solutions.git
+   fd06359..8bd6e97  main -> main
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git checkout ft/service-redesign 
+Switched to branch 'ft/service-redesign'
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git merge main
+Auto-merging services.html
+CONFLICT (content): Merge conflict in services.html
+Automatic merge failed; fix conflicts and then commit the result.
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git merge --abort 
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git diff
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git branch 
+  dev
+  ft/bundle-2
+* ft/service-redesign
+  main
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git diff
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git diff  main ft/service-redesign
+diff --git a/services.html b/services.html
+index 811a318..e00f4dd 100644
+--- a/services.html
++++ b/services.html
+@@ -8,6 +8,6 @@
+ </head>
+ <body>
+     <h1>Here we're providing good services</h1>
+-    <p>You're all welcomed</p>
++    <p>You're going to enjoy</p>
+ </body>
+ </html>
+\ No newline at end of file
+
+- ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git merge
+fatal: No remote for the current branch.
+
+- ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git merge main
+Auto-merging services.html
+CONFLICT (content): Merge conflict in services.html
+Automatic merge failed; fix conflicts and then commit the result.
+
+- ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git pus
+git: 'pus' is not a git command. See 'git --help'.
+
+The most similar commands are
+	push
+	pull
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git push origin ft/service-redesign
+Username for 'https://github.com': iamzilfa
+Password for 'https://iamzilfa@github.com': 
+Everything up-to-date
+
+- ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git status
+On branch ft/service-redesign
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   services.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+- ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git add .
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git commit -m 'conflicts merged'
+[ft/service-redesign 6dc11e2] conflicts merged
+
+- ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git push origin ft/service-redesign
+Username for 'https://github.com': iamzilfa
+Password for 'https://iamzilfa@github.com': 
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 332 bytes | 332.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/iamzilfa/Gym-Git-Exercise-Solutions.git
+   f0fe9e6..6dc11e2  ft/service-redesign -> ft/service-redesign
+
+- ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git checkout main 
+Switched to branch 'main'
 
 
 ```
