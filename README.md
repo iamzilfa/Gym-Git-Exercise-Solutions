@@ -1023,3 +1023,144 @@ ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$
 
 
 ```
+
+### Exercise 2
+
+```bash
+
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git checkout -b ft/footer
+Switched to a new branch 'ft/footer'
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git branch 
+  dev
+  ft/bundle-2
+  ft/contact-page
+  ft/faq-page
+* ft/footer
+  ft/home-page-redesign
+  ft/service-redesign
+  ft/team-page
+  main
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git add .
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git commit 'footer file created'
+error: pathspec 'footer file created' did not match any file(s) known to git
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git add .
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git commit 'footer file modified'
+error: pathspec 'footer file modified' did not match any file(s) known to git
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git status
+On branch ft/footer
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   footer.html
+
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git add .
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git commit -m 'footer.html'
+[ft/footer 4fd170f] footer.html
+ 1 file changed, 21 insertions(+)
+ create mode 100644 footer.html
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git add .
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git commit -m 'footer file modified'
+[ft/footer 02389ac] footer file modified
+ 1 file changed, 4 insertions(+)
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git push origin main 
+Username for 'https://github.com': iamzilfa
+Password for 'https://iamzilfa@github.com': 
+Everything up-to-date
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git push origin ft/f
+ft/faq-page   ft/footer     
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git push origin ft/footer 
+Username for 'https://github.com': iamzilfa
+Password for 'https://iamzilfa@github.com': 
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 787 bytes | 787.00 KiB/s, done.
+Total 6 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'ft/footer' on GitHub by visiting:
+remote:      https://github.com/iamzilfa/Gym-Git-Exercise-Solutions/pull/new/ft/footer
+remote: 
+To https://github.com/iamzilfa/Gym-Git-Exercise-Solutions.git
+ * [new branch]      ft/footer -> ft/footer
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git checkout main
+Switched to branch 'main'
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git checkout -b ft/squashing
+Switched to a new branch 'ft/squashing'
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git merge --squash ft/footer
+Updating c67937d..02389ac
+Fast-forward
+Squash commit -- not updating HEAD
+ footer.html | 25 +++++++++++++++++++++++++
+ 1 file changed, 25 insertions(+)
+ create mode 100644 footer.html
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git log
+commit c67937d6ac55f11ec031a4b4b73795d892a1dce2 (HEAD -> ft/squashing, origin/main, git-copy/main, main)
+Author: iamzilfa <zilcyam@gmail.com>
+Date:   Tue Oct 25 17:59:08 2022 +0200
+
+    README modified
+
+commit 92445adf5f574e9ee29488eac05a0522c1285e70
+Author: iamzilfa <zilcyam@gmail.com>
+Date:   Tue Oct 25 17:49:49 2022 +0200
+
+    faq file modified
+
+commit 268b143914219f953e8789d35234098ca321d92f
+Author: iamzilfa <zilcyam@gmail.com>
+Date:   Tue Oct 25 17:40:29 2022 +0200
+
+
+[5]+  Stopped                 git log
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git status
+On branch ft/squashing
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   footer.html
+
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git commit -m "footer changes squashing"
+[ft/squashing 8c33f3f] footer changes squashing
+ 1 file changed, 25 insertions(+)
+ create mode 100644 footer.html
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git log
+commit 8c33f3f783fa23ea425af4f8b5cd0240b7b2907c (HEAD -> ft/squashing)
+Author: iamzilfa <zilcyam@gmail.com>
+Date:   Tue Oct 25 18:20:01 2022 +0200
+
+    footer changes squashing
+
+commit c67937d6ac55f11ec031a4b4b73795d892a1dce2 (origin/main, git-copy/main, main)
+Author: iamzilfa <zilcyam@gmail.com>
+Date:   Tue Oct 25 17:59:08 2022 +0200
+
+    README modified
+
+commit 92445adf5f574e9ee29488eac05a0522c1285e70
+Author: iamzilfa <zilcyam@gmail.com>
+Date:   Tue Oct 25 17:49:49 2022 +0200
+
+
+[6]+  Stopped                 git log
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git status
+On branch ft/squashing
+nothing to commit, working tree clean
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git push origin ft/squashing 
+Username for 'https://github.com': iamzilfa
+Password for 'https://iamzilfa@github.com': 
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 550 bytes | 550.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'ft/squashing' on GitHub by visiting:
+remote:      https://github.com/iamzilfa/Gym-Git-Exercise-Solutions/pull/new/ft/squashing
+remote: 
+To https://github.com/iamzilfa/Gym-Git-Exercise-Solutions.git
+ * [new branch]      ft/squashing -> ft/squashing
+
+
+```
