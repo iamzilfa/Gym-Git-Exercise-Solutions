@@ -494,3 +494,389 @@ Switched to branch 'main'
 
 
 ```
+
+
+## Bundle 3
+
+### Exercise 1
+
+```bash
+
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git checkout -b ft/team-page
+Switched to a new branch 'ft/team-page'
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git add team.html
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git commit -m 'creating team file'
+[ft/team-page 3446165] creating team file
+ 1 file changed, 12 insertions(+)
+ create mode 100644 team.html
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git status
+On branch ft/team-page
+nothing to commit, working tree clean
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git push origin team.html
+error: src refspec team.html does not match any
+error: failed to push some refs to 'https://github.com/iamzilfa/Gym-Git-Exercise-Solutions.git'
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git push origin ft/team-page 
+Username for 'https://github.com': iamzilfa
+Password for 'https://iamzilfa@github.com': 
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 476 bytes | 476.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'ft/team-page' on GitHub by visiting:
+remote:      https://github.com/iamzilfa/Gym-Git-Exercise-Solutions/pull/new/ft/team-page
+remote: 
+To https://github.com/iamzilfa/Gym-Git-Exercise-Solutions.git
+ * [new branch]      ft/team-page -> ft/team-page
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git checkout main 
+Switched to branch 'main'
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git checkout -b ft/contact-page
+Switched to a new branch 'ft/contact-page'
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git checkout ft/team-page 
+Switched to branch 'ft/team-page'
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git log
+commit 3446165d5dadaf6cfe1037fe528ca87902c9f56c (HEAD -> ft/team-page, origin/ft/team-page)
+Author: iamzilfa <zilcyam@gmail.com>
+Date:   Tue Oct 25 14:52:05 2022 +0200
+
+    creating team file
+
+commit 7ccfb67656a9f87bb5ac972589ad8d4e36317f07 (origin/main, main, ft/contact-page)
+Author: iamzilfa <zilcyam@gmail.com>
+Date:   Tue Oct 25 14:49:34 2022 +0200
+
+    READMI modified
+
+commit 8bd6e97bcb6dabc8a6af969866a0fae00622cb57
+Author: iamzilfa <zilcyam@gmail.com>
+Date:   Tue Oct 25 14:04:22 2022 +0200
+
+    changes made on service file on main branch
+
+commit fd06359c44dccefbd400c68158dc9b8fc7aeb704
+Merge: c96f10f ecbcd1f
+Author: Zilfa CYAMANI <71026985+iamzilfa@users.noreply.github.com>
+
+[1]+  Stopped                 git log
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git checkout ft/contact-page 
+Switched to branch 'ft/contact-page'
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git cherry-pick 3446165d5dadaf6cfe1037fe528ca87902c9f56c
+[ft/contact-page 90f09fb] creating team file
+ Date: Tue Oct 25 14:52:05 2022 +0200
+ 1 file changed, 12 insertions(+)
+ create mode 100644 team.html
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git add contact.html
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git commit -m 'adding contact file'
+[ft/contact-page 9864e9e] adding contact file
+ 1 file changed, 12 insertions(+)
+ create mode 100644 contact.html
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git push origin ft/contact-page 
+Username for 'https://github.com': iamzilfa
+Password for 'https://iamzilfa@github.com': 
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 765 bytes | 765.00 KiB/s, done.
+Total 6 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'ft/contact-page' on GitHub by visiting:
+remote:      https://github.com/iamzilfa/Gym-Git-Exercise-Solutions/pull/new/ft/contact-page
+remote: 
+To https://github.com/iamzilfa/Gym-Git-Exercise-Solutions.git
+ * [new branch]      ft/contact-page -> ft/contact-page
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git branch
+  dev
+  ft/bundle-2
+* ft/contact-page
+  ft/service-redesign
+  ft/team-page
+  main
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git checkout -b ft/faq-page
+Switched to a new branch 'ft/faq-page'
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git push origin ft/faq-page 
+Username for 'https://github.com': iamzilfa
+Password for 'https://iamzilfa@github.com': 
+Total 0 (delta 0), reused 0 (delta 0)
+remote: 
+remote: Create a pull request for 'ft/faq-page' on GitHub by visiting:
+remote:      https://github.com/iamzilfa/Gym-Git-Exercise-Solutions/pull/new/ft/faq-page
+remote: 
+To https://github.com/iamzilfa/Gym-Git-Exercise-Solutions.git
+ * [new branch]      ft/faq-page -> ft/faq-page
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git log
+commit 9864e9ed639937ac941b494d8b86be1ad00403e4 (HEAD -> ft/faq-page, origin/ft/faq-page, origin/ft/contact-page, ft/contact-page)
+Author: iamzilfa <zilcyam@gmail.com>
+Date:   Tue Oct 25 15:06:37 2022 +0200
+
+    adding contact file
+
+commit 90f09fbe8299d06d805af232fb9f381db609bc38
+Author: iamzilfa <zilcyam@gmail.com>
+Date:   Tue Oct 25 14:52:05 2022 +0200
+
+    creating team file
+
+commit 7ccfb67656a9f87bb5ac972589ad8d4e36317f07 (origin/main, main)
+Author: iamzilfa <zilcyam@gmail.com>
+Date:   Tue Oct 25 14:49:34 2022 +0200
+
+    READMI modified
+
+commit 8bd6e97bcb6dabc8a6af969866a0fae00622cb57
+Author: iamzilfa <zilcyam@gmail.com>
+Date:   Tue Oct 25 14:04:22 2022 +0200
+
+[2]+  Stopped                 git log
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git revert 90f09fbe8299d06d805af232fb9f381db609bc38
+Removing team.html
+[ft/faq-page a09bc60] Revert "creating team file"
+ 1 file changed, 12 deletions(-)
+ delete mode 100644 team.html
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git log
+commit a09bc606740f3ba8b2653f0477b6e91313c3420f (HEAD -> ft/faq-page)
+Author: iamzilfa <zilcyam@gmail.com>
+Date:   Tue Oct 25 16:55:18 2022 +0200
+
+    Revert "creating team file"
+    
+    This reverts commit 90f09fbe8299d06d805af232fb9f381db609bc38.
+
+commit 9864e9ed639937ac941b494d8b86be1ad00403e4 (origin/ft/faq-page, origin/ft/contact-page, ft/contact-page)
+Author: iamzilfa <zilcyam@gmail.com>
+Date:   Tue Oct 25 15:06:37 2022 +0200
+
+    adding contact file
+
+commit 90f09fbe8299d06d805af232fb9f381db609bc38
+Author: iamzilfa <zilcyam@gmail.com>
+Date:   Tue Oct 25 14:52:05 2022 +0200
+
+    creating team file
+
+commit 7ccfb67656a9f87bb5ac972589ad8d4e36317f07 (origin/main, main)
+:...skipping...
+commit a09bc606740f3ba8b2653f0477b6e91313c3420f (HEAD -> ft/faq-page)
+Author: iamzilfa <zilcyam@gmail.com>
+Date:   Tue Oct 25 16:55:18 2022 +0200
+
+    Revert "creating team file"
+    
+    This reverts commit 90f09fbe8299d06d805af232fb9f381db609bc38.
+
+commit 9864e9ed639937ac941b494d8b86be1ad00403e4 (origin/ft/faq-page, origin/ft/contact-page, ft/contact-page)
+Author: iamzilfa <zilcyam@gmail.com>
+Date:   Tue Oct 25 15:06:37 2022 +0200
+
+    adding contact file
+
+commit 90f09fbe8299d06d805af232fb9f381db609bc38
+Author: iamzilfa <zilcyam@gmail.com>
+Date:   Tue Oct 25 14:52:05 2022 +0200
+
+    creating team file
+
+commit 7ccfb67656a9f87bb5ac972589ad8d4e36317f07 (origin/main, main)
+Author: iamzilfa <zilcyam@gmail.com>
+Date:   Tue Oct 25 14:49:34 2022 +0200
+
+    READMI modified
+
+commit 8bd6e97bcb6dabc8a6af969866a0fae00622cb57
+Author: iamzilfa <zilcyam@gmail.com>
+Date:   Tue Oct 25 14:04:22 2022 +0200
+
+    changes made on service file on main branch
+
+commit fd06359c44dccefbd400c68158dc9b8fc7aeb704
+Merge: c96f10f ecbcd1f
+Author: Zilfa CYAMANI <71026985+iamzilfa@users.noreply.github.com>
+Date:   Tue Oct 25 13:09:39 2022 +0200
+
+    Merge pull request #1 from iamzilfa/ft/bundle-2
+:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+commit a09bc606740f3ba8b2653f0477b6e91313c3420f (HEAD -> ft/faq-page)
+Author: iamzilfa <zilcyam@gmail.com>
+Date:   Tue Oct 25 16:55:18 2022 +0200
+
+    Revert "creating team file"
+    
+    This reverts commit 90f09fbe8299d06d805af232fb9f381db609bc38.
+
+commit 9864e9ed639937ac941b494d8b86be1ad00403e4 (origin/ft/faq-page, origin/ft/contact-page, ft/contact-page)
+Author: iamzilfa <zilcyam@gmail.com>
+Date:   Tue Oct 25 15:06:37 2022 +0200
+
+    adding contact file
+
+commit 90f09fbe8299d06d805af232fb9f381db609bc38
+Author: iamzilfa <zilcyam@gmail.com>
+Date:   Tue Oct 25 14:52:05 2022 +0200
+
+    creating team file
+
+commit 7ccfb67656a9f87bb5ac972589ad8d4e36317f07 (origin/main, main)
+Author: iamzilfa <zilcyam@gmail.com>
+Date:   Tue Oct 25 14:49:34 2022 +0200
+
+    READMI modified
+
+commit 8bd6e97bcb6dabc8a6af969866a0fae00622cb57
+Author: iamzilfa <zilcyam@gmail.com>
+Date:   Tue Oct 25 14:04:22 2022 +0200
+
+    changes made on service file on main branch
+
+commit fd06359c44dccefbd400c68158dc9b8fc7aeb704
+Merge: c96f10f ecbcd1f
+Author: Zilfa CYAMANI <71026985+iamzilfa@users.noreply.github.com>
+:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+commit a09bc606740f3ba8b2653f0477b6e91313c3420f (HEAD -> ft/faq-page)
+Author: iamzilfa <zilcyam@gmail.com>
+Date:   Tue Oct 25 16:55:18 2022 +0200
+
+    Revert "creating team file"
+    
+    This reverts commit 90f09fbe8299d06d805af232fb9f381db609bc38.
+
+commit 9864e9ed639937ac941b494d8b86be1ad00403e4 (origin/ft/faq-page, origin/ft/contact-page, ft/contact-page)
+Author: iamzilfa <zilcyam@gmail.com>
+Date:   Tue Oct 25 15:06:37 2022 +0200
+
+    adding contact file
+
+commit 90f09fbe8299d06d805af232fb9f381db609bc38
+Author: iamzilfa <zilcyam@gmail.com>
+Date:   Tue Oct 25 14:52:05 2022 +0200
+
+:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+commit a09bc606740f3ba8b2653f0477b6e91313c3420f (HEAD -> ft/faq-page)
+Author: iamzilfa <zilcyam@gmail.com>
+Date:   Tue Oct 25 16:55:18 2022 +0200
+
+    Revert "creating team file"
+    
+    This reverts commit 90f09fbe8299d06d805af232fb9f381db609bc38.
+
+commit 9864e9ed639937ac941b494d8b86be1ad00403e4 (origin/ft/faq-page, origin/ft/contact-page, ft/contact-page)
+Author: iamzilfa <zilcyam@gmail.com>
+Date:   Tue Oct 25 15:06:37 2022 +0200
+
+    adding contact file
+
+commit 90f09fbe8299d06d805af232fb9f381db609bc38
+Author: iamzilfa <zilcyam@gmail.com>
+Date:   Tue Oct 25 14:52:05 2022 +0200
+
+    creating team file
+
+
+[3]+  Stopped                 git log
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git push origin ft/faq-page 
+Username for 'https://github.com': ^Z
+[4]+  Stopped                 git push origin ft/faq-page
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git status
+On branch ft/faq-page
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	faq.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git push origin ft/faq-page 
+Username for 'https://github.com': iamzilfa
+Password for 'https://iamzilfa@github.com': 
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 270 bytes | 270.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/iamzilfa/Gym-Git-Exercise-Solutions.git
+   9864e9e..a09bc60  ft/faq-page -> ft/faq-page
+
+
+
+```
