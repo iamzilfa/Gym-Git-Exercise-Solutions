@@ -960,3 +960,66 @@ To https://github.com/iamzilfa/Gym-Git-Exercise-Solutions.git
 
 
 ```
+
+## Bundle 4
+
+### Exercise 1
+
+```bash
+
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git checkout main
+Already on 'main'
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git remote add git-copy https://github.com/iamzilfa/Git-Exercise.git
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git remote -v
+git-copy	https://github.com/iamzilfa/Git-Exercise.git (fetch)
+git-copy	https://github.com/iamzilfa/Git-Exercise.git (push)
+origin	https://github.com/iamzilfa/Gym-Git-Exercise-Solutions.git (fetch)
+origin	https://github.com/iamzilfa/Gym-Git-Exercise-Solutions.git (push)
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   faq.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git add faq file modied
+fatal: pathspec 'faq' did not match any files
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git add .
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git commit -m 'faq file modified'
+[main 92445ad] faq file modified
+ 1 file changed, 1 insertion(+)
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git push origin 
+fatal: The current branch main has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin main
+
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git push origin main
+Username for 'https://github.com': iamzilfa
+Password for 'https://iamzilfa@github.com': 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 334 bytes | 334.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/iamzilfa/Gym-Git-Exercise-Solutions.git
+   268b143..92445ad  main -> main
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git push git-copy main
+Username for 'https://github.com': iamzilfa
+Password for 'https://iamzilfa@github.com': 
+Enumerating objects: 43, done.
+Counting objects: 100% (43/43), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (38/38), done.
+Writing objects: 100% (43/43), 8.53 KiB | 2.13 MiB/s, done.
+Total 43 (delta 18), reused 0 (delta 0)
+remote: Resolving deltas: 100% (18/18), done.
+To https://github.com/iamzilfa/Git-Exercise.git
+ * [new branch]      main -> main
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ 
+
+
+```
