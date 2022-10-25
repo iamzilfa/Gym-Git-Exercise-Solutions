@@ -1164,3 +1164,128 @@ To https://github.com/iamzilfa/Gym-Git-Exercise-Solutions.git
 
 
 ```
+
+## Bundle 5
+
+### Exercise 1
+
+```bash
+
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git branch
+  dev
+  ft/bundle-2
+  ft/contact-page
+  ft/faq-page
+  ft/footer
+  ft/home-page-redesign
+  ft/service-redesign
+  ft/squashing
+  ft/team-page
+* main
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git status
+On branch main
+nothing to commit, working tree clean
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git pull
+fatal: unable to access 'https://github.com/iamzilfa/Gym-Git-Exercise-Solutions.git/': Could not resolve host: github.com
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=<remote>/<branch> main
+
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git pull main
+fatal: 'main' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git pull origin main 
+From https://github.com/iamzilfa/Gym-Git-Exercise-Solutions
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    home.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git add .
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git commit -m 'home modified into index'
+[main 7face87] home modified into index
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename home.html => index.html (100%)
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git push origin main 
+Username for 'https://github.com': iamzilfa
+Password for 'https://iamzilfa@github.com': 
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 231 bytes | 231.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/iamzilfa/Gym-Git-Exercise-Solutions.git
+   807e230..7face87  main -> main
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ 
+
+
+```
+
+### Exercise 2
+
+```bash
+
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ cd ..
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents$ git clone https://github.com/iamzilfa/git-cafe-exercise.git
+Cloning into 'git-cafe-exercise'...
+fatal: unable to access 'https://github.com/iamzilfa/git-cafe-exercise.git/': Could not resolve host: github.com
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents$ git clone https://github.com/iamzilfa/git-cafe-exercise.git
+Cloning into 'git-cafe-exercise'...
+fatal: unable to access 'https://github.com/iamzilfa/git-cafe-exercise.git/': Could not resolve host: github.com
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents$ git clone https://github.com/iamzilfa/git-cafe-exercise.git
+Cloning into 'git-cafe-exercise'...
+remote: Enumerating objects: 107, done.
+remote: Counting objects: 100% (107/107), done.
+remote: Compressing objects: 100% (101/101), done.
+remote: Total 107 (delta 5), reused 104 (delta 4), pack-reused 0
+Receiving objects: 100% (107/107), 1.95 MiB | 383.00 KiB/s, done.
+Resolving deltas: 100% (5/5), done.
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents$ cd git-cafe-exercise/
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-cafe-exercise$ code .
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-cafe-exercise$ git add .
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-cafe-exercise$ git commit -m 'index file modified'
+[main 1c3c319] index file modified
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-cafe-exercise$ git branch
+* main
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-cafe-exercise$ git push origin main 
+fatal: unable to access 'https://github.com/iamzilfa/git-cafe-exercise.git/': Could not resolve host: github.com
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-cafe-exercise$ git push origin main 
+fatal: unable to access 'https://github.com/iamzilfa/git-cafe-exercise.git/': Could not resolve host: github.com
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-cafe-exercise$ git push origin main 
+Username for 'https://github.com': iamzilfa
+Password for 'https://iamzilfa@github.com': 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 316 bytes | 316.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/iamzilfa/git-cafe-exercise.git
+   d1d3f9c..1c3c319  main -> main
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-cafe-exercise$ 
+
+
+```
