@@ -880,3 +880,83 @@ To https://github.com/iamzilfa/Gym-Git-Exercise-Solutions.git
 
 
 ```
+
+
+### Exercise 2
+
+```bash
+
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git checkout ft/faq-page 
+Switched to branch 'ft/faq-page'
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git checkout -b ft/home-page-redesign
+Switched to a new branch 'ft/home-page-redesign'
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git branch
+  dev
+  ft/bundle-2
+  ft/contact-page
+  ft/faq-page
+* ft/home-page-redesign
+  ft/service-redesign
+  ft/team-page
+  main
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git checkout main 
+Switched to branch 'main'
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git add .
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git commit -m 'home file modified'
+[main 5b324b5] home file modified
+ 1 file changed, 1 insertion(+)
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git push origin main 
+Username for 'https://github.com': iamzilfa
+Password for 'https://iamzilfa@github.com': 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 325 bytes | 325.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/iamzilfa/Gym-Git-Exercise-Solutions.git
+   11cd49f..5b324b5  main -> main
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git checkout ft/home-page-redesign
+Switched to branch 'ft/home-page-redesign'
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git rebase main
+First, rewinding head to replay your work on top of it...
+Applying: creating team file
+Applying: adding contact file
+Applying: Revert "creating team file"
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git branch 
+  dev
+  ft/bundle-2
+  ft/contact-page
+  ft/faq-page
+* ft/home-page-redesign
+  ft/service-redesign
+  ft/team-page
+  main
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git status
+On branch ft/home-page-redesign
+nothing to commit, working tree clean
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git add .
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git commit -m 'home file modified'
+[ft/home-page-redesign 2888a33] home file modified
+ 1 file changed, 6 insertions(+)
+ubuntu@ubuntu-HP-EliteBook-Folio-9480m:~/Documents/git-exercises$ git push origin ft/home-page-redesign 
+Username for 'https://github.com': iamzilfa
+Password for 'https://iamzilfa@github.com': 
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (11/11), done.
+Writing objects: 100% (11/11), 1.29 KiB | 1.29 MiB/s, done.
+Total 11 (delta 6), reused 0 (delta 0)
+remote: Resolving deltas: 100% (6/6), completed with 2 local objects.
+remote: 
+remote: Create a pull request for 'ft/home-page-redesign' on GitHub by visiting:
+remote:      https://github.com/iamzilfa/Gym-Git-Exercise-Solutions/pull/new/ft/home-page-redesign
+remote: 
+To https://github.com/iamzilfa/Gym-Git-Exercise-Solutions.git
+ * [new branch]      ft/home-page-redesign -> ft/home-page-redesign
+
+
+
+```
